@@ -86,6 +86,7 @@ _vehicle setVariable [ "LARs_menuSystemActive", true ];
 _vehicle setVariable [ "LARs_activeMenu", _menu ];
 _vehicle setVariable [ "LARs_MenuDistance", _menuDistance ];
 
+
 //If the vehicle is a player add an event to hide the players menu in the event he is also looking at another object with a menu system
 if ( !( isNull player ) && { _vehicle isEqualTo player } ) then {
 	_actionMenuEH = [] spawn {

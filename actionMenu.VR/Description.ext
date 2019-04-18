@@ -1,4 +1,5 @@
 //LARs_actionMenuColor = "#ff0000";		//Set colors of actionMenus control items
+LARs_actionMenuPrefix = "  >";			//Will prefix all menu actions
 
 class CfgFunctions {
 	#include "LARs\actionMenu.cpp"

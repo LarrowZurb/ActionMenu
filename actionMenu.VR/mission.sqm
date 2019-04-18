@@ -1,21 +1,57 @@
-version=12;
-class Mission
+version=53;
+class EditorData
 {
-	addOns[]=
+	moveGridStep=1;
+	angleGridStep=0.2617994;
+	scaleGridStep=1;
+	autoGroupingDist=10;
+	toggles=1;
+	class ItemIDProvider
 	{
-		"A3_Characters_F_BLUFOR",
-		"a3_characters_f",
-		"map_vr",
-		"A3_Weapons_F_Ammoboxes"
+		nextID=5;
 	};
-	addOnsAuto[]=
+	class Camera
 	{
-		"A3_Characters_F_BLUFOR",
-		"a3_characters_f",
-		"A3_Weapons_F_Ammoboxes",
-		"map_vr"
+		pos[]={4033.9233,30,4005.5432};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
-	randomSeed=1474775;
+};
+binarizationWanted=0;
+addons[]=
+{
+	"A3_Weapons_F_Ammoboxes",
+	"A3_Characters_F"
+};
+class AddonsMetaData
+{
+	class List
+	{
+		items=2;
+		class Item0
+		{
+			className="A3_Weapons_F";
+			name="Arma 3 Alpha - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item1
+		{
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+	};
+};
+randomSeed=1644736;
+class ScenarioData
+{
+	author="SaNiC";
+};
+class Intro
+{
 	class Intel
 	{
 		timeOfChanges=1800.0002;
@@ -33,74 +69,114 @@ class Mission
 		startFogDecay=0.0049999999;
 		forecastFogDecay=0.0049999999;
 	};
-	class Groups
+};
+class Mission
+{
+	class Intel
 	{
-		items=2;
+		timeOfChanges=1800.0002;
+		startWeather=0;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		day=28;
+		hour=13;
+		minute=37;
+		startFogDecay=0.0049999999;
+		forecastFogDecay=0.0049999999;
+	};
+	class Entities
+	{
+		items=3;
 		class Item0
 		{
-			side="WEST";
-			class Vehicles
+			dataType="Object";
+			class PositionInfo
 			{
-				items=1;
-				class Item0
-				{
-					position[]={4033.9233,5,4030.4932};
-					id=0;
-					side="WEST";
-					vehicle="B_Soldier_F";
-					player="PLAYER COMMANDER";
-					leader=1;
-					rank="MAJOR";
-					skill=0.60000002;
-				};
+				position[]={4034.5732,5.1887245,4032.3296};
 			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				skill=0.60000002;
+				init="nul = this execvm ""cargomenu.sqf""";
+				name="box";
+			};
+			id=0;
+			type="Box_NATO_Wps_F";
 		};
 		class Item1
 		{
-			side="WEST";
-			class Vehicles
+			dataType="Group";
+			side="West";
+			class Entities
 			{
 				items=1;
 				class Item0
 				{
-					position[]={4035.6741,5,4030.5117};
-					id=1;
-					side="WEST";
-					vehicle="B_Soldier_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="MAJOR";
-					skill=0.60000002;
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4033.9233,5.0014391,4030.5933};
+					};
+					side="West";
+					flags=6;
+					class Attributes
+					{
+						skill=0.60000002;
+						rank="MAJOR";
+						isPlayer=1;
+						isPlayable=1;
+					};
+					id=2;
+					type="B_Soldier_F";
 				};
 			};
+			class Attributes
+			{
+			};
+			id=1;
 		};
-	};
-	class Vehicles
-	{
-		items=1;
-		class Item0
+		class Item2
 		{
-			position[]={4034.5732,5,4032.3296};
-			id=2;
-			side="EMPTY";
-			vehicle="Box_NATO_Wps_F";
-			skill=0.60000002;
-			text="box";
-			init="nul = this execvm ""cargomenu.sqf""";
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4035.6741,5.0014391,4030.6118};
+					};
+					side="West";
+					flags=6;
+					class Attributes
+					{
+						skill=0.60000002;
+						rank="MAJOR";
+						isPlayable=1;
+					};
+					id=4;
+					type="B_Soldier_F";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=3;
 		};
 	};
 };
-class Intro
+class OutroLoose
 {
-	addOns[]=
-	{
-		"map_vr"
-	};
-	addOnsAuto[]=
-	{
-		"map_vr"
-	};
-	randomSeed=1833989;
 	class Intel
 	{
 		timeOfChanges=1800.0002;
@@ -121,44 +197,6 @@ class Intro
 };
 class OutroWin
 {
-	addOns[]=
-	{
-		"map_vr"
-	};
-	addOnsAuto[]=
-	{
-		"map_vr"
-	};
-	randomSeed=8557267;
-	class Intel
-	{
-		timeOfChanges=1800.0002;
-		startWeather=0;
-		startWind=0.1;
-		startWaves=0.1;
-		forecastWeather=0;
-		forecastWind=0.1;
-		forecastWaves=0.1;
-		forecastLightnings=0.1;
-		year=2035;
-		day=28;
-		hour=13;
-		minute=37;
-		startFogDecay=0.0049999999;
-		forecastFogDecay=0.0049999999;
-	};
-};
-class OutroLoose
-{
-	addOns[]=
-	{
-		"map_vr"
-	};
-	addOnsAuto[]=
-	{
-		"map_vr"
-	};
-	randomSeed=2470016;
 	class Intel
 	{
 		timeOfChanges=1800.0002;

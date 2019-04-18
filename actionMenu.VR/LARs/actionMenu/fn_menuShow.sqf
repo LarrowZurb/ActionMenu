@@ -69,6 +69,10 @@ _newMenu = +( _vehicle getVariable [ "LARs_activeMenu", [] ] ) ;
 //Number of child menus in current menu depth
 _childMenus = 0;
 
+//Get any menuPrefix provided in the description.ext
+_prefix = [ "  >  ", getText( missionConfigFile >> "LARs_actionMenuPrefix" ) ] select isText( missionConfigFile >> "LARs_actionMenuPrefix" );
+_prefix = _prefix + "%1";
+
 //Sort current menu items
 {
 	//If item is an action
@@ -81,6 +85,8 @@ _childMenus = 0;
 			//Insert menuUP into current action
 			_newAction = [ _newAction, ( format [ "[ _this select 0, %1 ] call LARs_fnc_menuUP", _childMenus ] ) ] call _addActionCode;
 		};
+
+		_newAction set[ 0, format[ _prefix, _newAction select 0 ] ];
 
 		//Insert global distance condition into action
 		_newAction = [ _newAction, ( format [ "_this distance _target < %1", _vehicle getVariable "LARs_menuDistance" ] ) ] call _addActionCondition;
