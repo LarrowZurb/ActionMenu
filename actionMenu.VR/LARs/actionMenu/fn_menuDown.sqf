@@ -1,11 +1,9 @@
 
-private [ "_vehicle", "_depth" ];
-
-_vehicle = _this;
+params[ "_vehicle" ];
 
 //Remove last depth from array
-_depth = _vehicle getVariable [ "LARs_menuDepth", [] ];
+private _depth = _vehicle getVariable [ "LARs_menuDepth", [] ];
 _depth deleteAt (( count _depth ) -1 );
 _vehicle setVariable [ "LARs_menuDepth", _depth ];
 
-_vehicle call LARs_fnc_menuShow;
+[ _vehicle ] call LARs_fnc_menuShow;

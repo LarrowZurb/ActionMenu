@@ -1,9 +1,7 @@
 
-private [ "_vehicle" ];
+params[ "_vehicle" ];
 
-_vehicle = _this;
-
-_vehicle call LARs_fnc_menuClear;
+[ _vehicle ] call LARs_fnc_menuClear;
 
 //Clear _vehicle of menu variables
 _vehicle setVariable [ "LARs_menuDepth", nil ];

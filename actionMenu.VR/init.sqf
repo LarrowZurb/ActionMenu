@@ -8,6 +8,7 @@ Both the player and the ammo crate infront of you have an actionMenu applied to 
 Bringing up the actionMenu and looking at the crate will temporarily disable the players menu and show you the crates menu.
 " ];
 
+
 menu = [
 	[ "Menu 0", {}, [], -1, false, false, "", "" ],
 	[

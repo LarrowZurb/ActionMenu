@@ -1,7 +1,5 @@
 
-private [ "_vehicle" ];
-
-_vehicle = _this;
+params[ "_vehicle" ];
 
 //Remove current actions
 {
